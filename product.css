@@ -1,0 +1,154 @@
+*{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;  
+    background-size: cover;
+}
+body{
+   
+    background-size: cover;
+    background-color: rgb(230, 230, 211);
+   
+}
+nav{
+    position: fixed;
+    height: 80px;
+    width: 100%;
+    background:black;
+    top: 0;
+    left: 0;
+}
+nav img{
+  margin-top: 5px;
+  margin-left:-5px;
+  width: 15%;
+  height: auto;
+  }
+nav ul{
+    float: right;
+    margin-right: 40px;
+
+}
+nav li{
+    display: inline-block;
+    margin: 10 30px;
+    line-height: 80px;
+}
+nav a{
+    color: white;
+    font-size: 12px;
+    text-transform: uppercase;
+    border: 1px solid transparent;
+    padding: 7px 10px;
+    border-radius: 3px;
+}
+a.active,a:hover{
+    border: 1px solid white;
+   
+}
+.newPro{
+    position: relative;
+    padding: 40px;
+    margin-top: 200px;
+    margin-left: 80px;  
+    display: block;
+    height: 450px;
+    background-color: black;
+    opacity: 10px;
+    background: url("gold9.jpg") no-repeat;
+    background-size: cover;
+    opacity: 1;
+    border-radius: 20px;
+    
+    
+}
+.c1,.c2{
+    width: 300px;
+    height: 40px;
+    
+}
+.b1{
+    width: 150px;
+    height: auto;
+    padding: 10px;
+    margin-right: 5px;
+    cursor: pointer;
+    color: white;
+    background-color: rgb(117, 109, 64);
+    font-size: medium;
+    margin-bottom: 5px;
+}
+.b2{
+    width: 150px;
+    height: auto;
+    padding: 10px;
+    color: white;
+    cursor: pointer;
+    background-color: rgb(117, 109, 64);
+    font-size: medium;
+    margin-bottom: 5px;
+}
+.b3{
+    width: 150px;
+    height: auto;
+    padding: 10px;
+    margin-right: 5px;
+    cursor: pointer;
+    color: white;
+    background-color: rgb(117, 109, 64);
+    font-size: medium;
+    margin-bottom: 5px;
+}
+.b4{
+    width: 150px;
+    height: auto;
+    padding: 10px;
+    cursor: pointer;
+    color: white;
+    background-color: rgb(117, 109, 64);
+    font-size: medium;
+    margin-bottom: 5px;
+}
+.b5{
+    width: 150px;
+    height: auto;
+    padding: 10px;
+    cursor: pointer;
+    margin-left: 70px;
+    color: white;
+    background-color: rgb(117, 109, 64);
+    font-size: medium;
+    margin-bottom: 5px;
+}
+.b5:hover{
+       color: black;
+       background-color: white;
+}
+.b4:hover{
+    color: black;
+    background-color: white;
+}
+.b3:hover{
+    color: black;
+    background-color: white;
+}
+.b2:hover{
+    color: black;
+    background-color: white;
+}
+.b1:hover{
+    color: black;
+    background-color: white;
+}
+.leg{
+    font-size: 20px;
+    font:bold;
+    color: white;
+    
+}
+.input1,.input2,.input3{
+    width: 300px;
+    background-color: white;
+    height: 30px;
+}

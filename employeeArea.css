@@ -1,0 +1,181 @@
+*{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;  
+    background-size: cover;
+}
+body{
+    font-family: montserrat;  
+    scroll-behavior:inherit;
+}
+nav{
+    position: fixed;
+    height: 80px;
+    width: 100%;
+    background:rgb(67, 67, 182);
+    top: 0;
+    border-bottom: 2px solid blue;
+}
+nav img{
+  margin-top: 5px;
+  margin-left:-5px;
+  width: 15%;
+  height: auto;
+  float: left;
+  }
+img{
+    width: 700px;
+    height: 700px;
+    float: right;
+    border-radius: 100%;
+    margin-top: 70px;
+}
+nav ul{
+    float: right;
+    margin-right: 40px;
+}
+nav li{
+    display: inline-block;
+    margin: 10 30px;
+    line-height: 80px;
+}
+nav a{
+    color: white;
+    font-size: 12px;
+    text-transform: uppercase;
+    border: 1px solid transparent;
+    padding: 7px 10px;
+    border-radius: 3px;
+}
+a.activeeee,a:hover{
+    border: 1px solid white;
+}
+.div1{
+    position: absolute;
+    margin-top: 200px;
+    margin-left: 20px;
+    width: 700px;
+    height: 550px;
+    background-color: white;
+   
+}
+.dd{
+  width: 250px;
+  text-align: left;
+  padding-left: 5px;
+  margin: 20px;
+  height: 350px;
+  float: left;
+  
+}
+
+.fild{
+    padding-left: 5px;
+    width: 400px;
+    height: 500px;
+    margin-top: 0px;
+    font-weight: bold;
+
+    background-color: white;
+    border-radius: 1em;
+    box-shadow: 0 0.188em 1.550em rgb(156, 156, 156);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+
+
+}
+.ddd{
+    width: 250px;
+    text-align: left;
+    padding-left: 5px;
+    margin: 20px;
+    margin-left: 0;
+    height: 350px;
+    
+}
+.empinput{
+    width: 85%;
+    height: 40px;
+    padding-top: 10px;
+    margin-top: 5px;
+    outline: none;
+   border: 2px solid #aaa;
+    box-sizing: border-box;
+    font-size: large;
+    border-radius: 4px;
+    
+}
+input[type=text]:focus{
+    border-color: dodgerblue;
+    box-shadow: 0 0 8px 0 dodgerblue;
+}
+.empLabel{
+padding-top: 10px;
+margin-top: 5px;
+}
+
+.empinput2{
+    width: 85%;
+    height: 40px;
+    padding-top: 10px;
+    outline: none;
+    border: 2px solid #aaa;
+    box-sizing: border-box;
+    font-size: large;
+    border-radius: 4px;
+   
+}
+.empLabel2{
+padding-top: 10px;
+margin: 10px;
+font-weight: 50px;
+
+}
+.desi{
+    width: 210px;
+    height: 40px;
+    margin: 10px;
+    outline: none;
+    border: 2px solid #aaa;
+    box-sizing: border-box;
+    font-size: large;
+    border-radius: 4px;
+}
+.b1{
+    width: 150px;
+    height: auto;
+    padding: 10px;
+    margin: 15px;
+    cursor: pointer;
+    color: white;
+    background-color: rgb(117, 109, 64);
+    font-size: medium;
+    margin-left: 60px;
+   
+}
+.b1:hover,.b2:hover{
+    color: black;
+    background-color: white;
+}
+.b2{
+    width: 150px;
+    height: auto;
+    padding: 10px;
+    color: white;
+    cursor: pointer;
+    background-color: rgb(117, 109, 64);
+    font-size: medium;
+    margin: 15px;
+    margin-left: 60px;
+}
+
+
+
+
+
+
+
+   

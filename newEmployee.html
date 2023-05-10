@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="loder.js" defer></script>
+    <link rel="stylesheet" href="newemployee.css">
+    <link rel="stylesheet" href="loder.css">
+</head>
+<body>
+   
+    <nav id="navbar">
+     
+        <img class="logo" src="image/logo.png" >
+        <ul class="nav-area">
+            <li><a class="active" href="inde1.html">Home</a></li>
+            <li><a class="activee"  href="product.html">Product</a>
+            </li>
+          
+            <li ><a class="activeee" href="order.html">Customer</a></li>   
+            <li ><a class="activeeee" href="newEmployee.html">Employee</a></li>
+            <li ><a class="activeeeee" href="#">About</a></li>
+        </ul>
+          
+        <label id="icon">
+            <i class="fas fa-bars"></i>
+        </label>
+    </nav>
+    <form action="/" method="GET">
+    <div class="div1">
+        <h2>New Employee</h2>
+        <fieldset class="fild" ><legend>General Information</legend>
+            <fieldset class="dd">
+                <label class="empLabel">Firest Name:</label><br>
+                <input  class="empinput" type="text"><br><br>
+                <label class="empLabel">Last Name:</label><br>
+                <input  class="empinput" type="text"><br><br>
+                <label class="empLabel">Contact:</label><br>
+                <input  class="empinput" type="text"><br><br>
+                <label class="empLabel">Join Date:</label><br>
+                <input  class="empinput" type="text"><br><br>
+            </fieldset>
+            <fieldset class="ddd">
+                <label class="empLabel2">Address:</label><br>
+                <input  class="empinput2" type="text"><br>
+                <label class="empLabel">Employee Designation:</label>
+                <select class="desi">
+                    <option vlaue="salesman">salesman</option>
+                    <option vlaue="salesman">salesman</option>
+                    <option vlaue="salesman">salesman</option>
+                </select><br>
+                <label class="empLabel2">Acount Stutus:</label><br>
+                <select class="desi">
+                    <option vlaue="salesman">Activ</option>
+                    <option vlaue="salesman">salesman</option>
+                    <option vlaue="salesman">salesman</option>
+                </select><br>
+                <label class="empLabel2">Salary:</label><br>
+                <input  class="empinput2" type="text"><br>
+                <label class="empLabel2">Salary Pay To:</label><br>
+                <select class="desi">
+                    <option vlaue="salesman">salesman</option>
+                    <option vlaue="salesman">salesman</option>
+                    <option vlaue="salesman">salesman</option>
+                </select><br>
+            </fieldset>
+            <input class="b1" type="button" value="Add Employee">
+            <input class="b2" type="button" value="Update">
+            <!--<input class="b3" type="button" value="">-->
+            <a class="b3" href="employeeArea.html">Area Assign</a></li>
+        </fieldset>
+    </div>
+</form>
+    <script type="text/javascript">
+        var lastScrollTop = 0;
+        navbar = document.getElementById("navbar");
+        window.addEventListener("scroll", function(){
+            var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            if(scrollTop > lastScrollTop){
+                navbar.style.top="-80px";
+            } else{
+                navbar.style.top="0";
+            }
+            lastScrollTop = scrollTop;
+        })
+    </script>
+   
+    
+</body>
+</html>

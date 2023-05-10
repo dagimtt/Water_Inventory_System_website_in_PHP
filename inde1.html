@@ -5,7 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="loder.js" defer></script>
     <link rel="stylesheet" href="style1.css">
+    <link rel="stylesheet" href="loder.css">
    
 </head>
 <body>
@@ -13,38 +15,36 @@
    
     <nav>
      
-        <img class="logo" src="logo.png" >
+        <img class="logo" src="image/logo.png" >
         <ul class="nav-area">
             <li><a class="active" href="#">Home</a></li>
-            <li><a class="dropdown"   onclick="toggleDropdown()">Product</a>
-                <ul class="dropdown-menu">
-                    <li><a href="product.html">Customer</a></li>   
-                    <li><a href="#">Employee</a></li>
-                    <li><a href="#">About</a></li>
-                </ul>
-            </li>
-          
-            <li><a href="#">Customer</a></li>   
-            <li><a href="#">Employee</a></li>
-            <li><a href="#">About</a></li>
+            <li><a class="activee"  href="product.html">Product</a></li>
+            <li ><a class="activeee" href="order.html">Customer</a></li>   
+            <li ><a class="activeeee" href="newEmployee.html">Employee</a></li>
+            <li ><a class="activeeeee" href="#">About</a></li>
         </ul>
           
         <label id="icon">
             <i class="fas fa-bars"></i>
         </label>
     </nav>
-     <img src="gold4.jpg">
-     <script>
- function toggleDropdown() {
- var dropdownMenu = document.getElementById("dropdown-menu");
- if (dropdownMenu.style.display === "none") {
-  dropdownMenu.style.display = "block";
- } else {
-  dropdownMenu.style.display = "none";
- }
-}
+    <div class="images">
+        <img src="image/gold3.jpg">
+        <img src="image/gold10.webp">
+        <img src="image/back.jpg">
+        <img src="image/gold3.jpg">
+        <img src="image/gold10.webp">
+        <img src="image/back.jpg">
+        <img src="image/gold3.jpg">
+        <img src="image/gold10.webp">
+        <img src="image/back.jpg">
+        <img src="image/gold3.jpg">
+        <img src="image/gold10.webp">
+        <img src="image/back.jpg">
+       
+    </div>
+  
 
-
-     </script>
+<script src="order.js"></script>
 </body>
 </html>

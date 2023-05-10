@@ -15,9 +15,10 @@ nav{
     position: fixed;
     height: 80px;
     width: 100%;
-    background:black;
+    background:rgb(67, 67, 182);
     top: 0;
     left: 0;
+    border: 2px solid blue;
 }
 nav img{
   margin-top: 5px;
@@ -43,7 +44,7 @@ nav a{
     padding: 7px 10px;
     border-radius: 3px;
 }
-a.active,a:hover{
+a.activee,a:hover{
     border: 1px solid white;
    
 }
@@ -56,7 +57,7 @@ a.active,a:hover{
     height: 450px;
     background-color: black;
     opacity: 10px;
-    background: url("gold9.jpg") no-repeat;
+    background: url("image/gold9.jpg") no-repeat;
     background-size: cover;
     opacity: 1;
     border-radius: 20px;
@@ -151,4 +152,6 @@ a.active,a:hover{
     width: 300px;
     background-color: white;
     height: 30px;
+    border: none;
+
 }

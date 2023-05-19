@@ -1,3 +1,29 @@
+<?php
+include 'connection.php';
+$id = $_GET['updateid'];
+  if(isset($_POST['subm'])){
+    $fname=$_POST['fname'];
+    $lname=$_POST['lname'];
+    $contact=$_POST['contact'];
+   // $date=$_POST['date'];
+    $address=$_POST['address'];
+    $account=$_POST['account'];
+    $salary=$_POST['salary'];
+   // $salaryto=$_POST['salaryto'];
+
+   $sql = "UPDATE table2 SET id=$id,fname='$fname',lname='$lname',contact='$contact',addresss='$address' ,account='$account',salary='$salary' WHERE id=$id";
+
+    $result = mysqli_query($con,$sql);
+    if($result){
+     // echo "updated succ";
+     header('location:employeTable.php');
+    }
+    else{
+      die(mysquli_error($con));
+    }
+  }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,80 +32,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    
     <script src="loder.js" defer></script>
     <link rel="stylesheet" href="newemployee.css">
     <link rel="stylesheet" href="loder.css">
-    <style>
-    .dropdown-content {
-        display: none;
-        position: absolute;
-        background-color: #f9f9f9;
-        min-width: 160px;
-        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-        z-index: 1;
-      }
-      .dropdown-a{
-      color: white;
-    font-size: 12px;
-    text-transform: uppercase;
-    border: 1px solid transparent;
-    padding: 7px 10px;
-    border-radius: 3px;
-    }
-      .dropdown-content a {
-        float: none;
-        color: black;
-         height: 40px;
-        text-decoration: none;
-        display: block;
-        text-align: left;
-      }
-      
-      .dropdown-content a:hover {
-        background-color: #ddd;
-      } 
-      .dropdown:hover .dropdown-content {
-        display: block;
-      }</style>
 </head>
 
 <body>
 
-    <nav id="navbar">
-
-        <img class="logo" src="image/logo.png">
-        <ul class="nav-area">
-            <li><a class="active" href="inde1.html">Home</a></li>
-            <li>   <div class="dropdown">
-                <a class="dropbtn">product 
-                  <i class="fa fa-caret-down"></i>
-                </a>
-                <div class="dropdown-content">
-                  <a href="product.html">new product</a>
-                  <a href="employeTable.php">product list</a>
-                  
-                </div>
-            </li>
-
-            <li><a class="activeee" href="order.html">Customer</a></li>
-            <li><div class="dropdown">
-                <a class="dropbtn">emplotee 
-                  <i class="fa fa-caret-down"></i>
-                </a>
-                <div class="dropdown-content">
-                  <a href="newEmployee.html">new employee</a>
-                  <a href="employeTable.php">employee list</a>
-                  
-                </div></li>
-            <li><a class="activeeeee" href="#">About</a></li>
-        </ul>
-
-        <label id="icon">
-            <i class="fas fa-bars"></i>
-        </label>
-    </nav>
-    <form name="custom_form" id="forme" action="employee.php" method="post" >
+<form id="for" method="post">
         <div class="div1">
             <h2>New Employee</h2>
             <fieldset class="fild">
@@ -87,18 +47,15 @@
                 <fieldset class="dd">
                     <div class="d1">
                     <label class="empLabel"  >Firest Name:</label><br>
-                    <input id="fname" class="empinput" type="text" name="fname" ><br>
-                    <span class="error">please enter firest name</span>
+                    <input id="fname" class="empinput" type="text" name="fname" ><br><br>
                    </div>
                    <div class="d1">
                     <label class="empLabel">Last Name:</label><br>
-                    <input id="lname" class="empinput" type="text" name="lname"><br>
-                    <span class="error">please enter last name</span>
+                    <input id="lname" class="empinput" type="text" name="lname"><br><br>
                 </div>
                 <div class="d1">
                     <label class="empLabel">Contact:</label><br>
-                    <input id="contact" class="empinput" type="text" name="contact"><br>
-                    <span class="error">please enter contact</span>
+                    <input id="contact" class="empinput" type="text" name="contact"><br><br>
                 </div>
                   <!--  <label  class="empLabel">Join Date:</label><br>
                     <input id="date" class="empinput" type="text" name="date"><br><br>-->
@@ -107,7 +64,6 @@
                     <div class="d2">
                     <label class="empLabel2">Address:</label><br>
                     <input id="address" class="empinput2" type="text" name="address"><br>
-                    <span class="error">please enter address</span>
                 </div>
                 <div class="d2">
                     <label class="empLabel2">Acount Stutus:</label><br>
@@ -116,12 +72,10 @@
                         <option value="salesman">salesman</option>
                         <option value="salesman">salesman</option>
                     </select><br>
-                    <span class="error">please select acc stutus</span>
                 </div>
                 <div class="d2">
                     <label class="empLabel2">Salary:</label><br>
                     <input id="salary" class="empinput2" type="text" name="salary"><br>
-                    <span class="error">please enter salary</span>
                 </div>
                    <!-- <select id="salaryto" class="desi" name="salaryto">
                         <option value="salesman">salesman</option>
@@ -131,10 +85,9 @@
                     </select><br>
                             -->
                 </fieldset>
-                <input class="b1" type="submit" value="Add Employee" name="submit">
+                <input class="b1" type="submit" value="update" name="subm">
                 <input class="b2" type="reset" value="reset">
                 <!--<input class="b3" type="button" value="">-->
-                <a class="b3" href="employeeArea.html">Area Assign</a></li>
             </fieldset>
         </div>
     </form>
@@ -151,7 +104,7 @@
             lastScrollTop = scrollTop;
         })
     </script>
-<script type="text/javascript" src="employeValidation.js"></script>
+
 
 </body>
 

@@ -1,0 +1,106 @@
+body{
+    background-color: #344a72;
+    font-family: 'Roboto',sans-serif;
+}
+.order-box{
+    width: 600px;
+    height: 480px;
+    background-color: white;
+    margin-left: 27%;
+    
+}
+.header{
+    text-align: center;
+    color: white;
+}
+.para{
+    text-align: center;
+    color: white;
+}
+
+.size{
+    margin-left: 30px;
+    margin-top: 30px;
+    padding: 7px;
+    width: 180px;
+    border: 1px solid grey;
+  border-radius: 6px;
+  outline: none;
+}
+.quantity{
+    margin-left: 240px;
+    margin-left: 30px;
+    margin-top: 30px;
+    padding: 7px;
+    width: 190px;
+    border: 1px solid grey;
+    border-radius: 6px;
+    outline: none;
+}
+.email{
+    margin-left: 30px;
+    margin-top: 30px;
+    padding: 7px;
+    width: 165px;
+    border: 1px solid grey;
+  border-radius: 6px;
+  outline: none;
+  position: relative;
+}
+.date{
+    margin-left: 240px;
+    margin-left: 30px;
+    margin-top: 30px;
+    padding: 7px;
+    width: 180px;
+    border: 1px solid grey;
+    border-radius: 6px;
+    outline: none;
+}
+.phone{
+    width: 80%;
+    margin-left: 30px;
+    padding: 7px;
+    margin-top: 30px;
+    border: 1px solid grey;
+    border-radius: 6px;
+    outline: none;
+}
+.place{
+    width: 80%;
+    margin-left: 30px;
+    padding: 7px;
+    margin-top: 30px;
+    border: 1px solid grey;
+    border-radius: 6px;
+    outline: none;  
+}
+.textearea{
+    width: 80%;
+    margin-left: 30px;
+    padding: 7px;
+    margin-top: 30px;
+    border: 1px solid grey;
+    border-radius: 6px;
+    outline: none; 
+}
+.btn{
+    width: 80%;
+    margin-left: 30px;
+    padding: 7px;
+    margin-top: 30px;
+    border: 1px solid grey;
+    border-radius: 6px;
+    outline: none; 
+    background-color: rgb(105, 94, 31);
+    color: white;
+    font-size: large;
+}
+.btn:hover{
+    background-color: rgb(4, 4, 248);
+    color: rgb(19, 114, 114);
+}
+#order2,#order3,#order4,#order5,#order6,#order7 {
+    color: rgb(240, 8, 39);
+}
+

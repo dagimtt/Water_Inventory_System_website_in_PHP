@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Customer</title>
+    <link rel="stylesheet" href="Css/customer2.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap" rel="stylesheet">
+   
+
+</head>
+<body>
+    <div class="header-div">
+        <h1 class="header">Customer Information</h1>
+    </div>
+   
+    <div class="box-general">
+    <form>
+        <div class="box-1">
+<label for="">Customer Name</label></br>
+<input type="text" id="custName" onkeyup="validateCustName()"></br>
+<span id="cust"></span>
+<label for="">Contact #</label></br>
+<input type="text" id="contact" onkeyup="validateContact()"></br>
+<span id="cust2"></span>
+<label for="">Address</label></br>
+<input type="text" id="address" onkeyup="validateAddress()"></br>
+<span id="cust3"></span>
+<label for="">Account Status</label></br>
+<select name="" id="" >
+<option value="val">Active</option>
+<option value="val2">Dective</option>
+</select>
+</div>
+<div class="box-2">
+<label for="">Customer Type</label></br>
+<select name="" id="" ></br>
+    <option value="val">Agent</option>
+    <option value="val2">Others</option>
+    </select></br>
+    <label for="">Money </label></br>
+    <select name="" id="" >
+        <option value="val">Cridet</option>
+        <option value="val2">Cash</option>
+        </select></br>
+        <label for="">Amount</label>
+        <input type="text" name="" id="amount" onkeyup="validateAmount()">
+        <span id="cust4"></span>
+    </div>
+        <div class="box-3">
+
+      <label for="">Search by ID</label></br>
+<input type="text" class="inp">
+<input class="searchbtn" type="button" value="Search" >
+</div>
+<div class="box-4">
+    <label for="">Select Area</label></br>
+    <select name="" id="">
+        <option value="val">wolkite</option>
+        <option value="val">jimma</option>
+        <option value="val">addis</option>
+        <option value="val">hawasa</option>
+        <option value="val">gondar</option>
+    </select></br>
+    <input type="checkbox" value="Monday" id="mon">
+    <label for="mon">Monday</label>
+    <input type="checkbox" value="Tuesday" id="tue">
+    <label for="tue">Tuesday</label>
+    <input type="checkbox" value="wednesday" id="wed">
+    <label for="wed">Wednesday</label></br>
+
+    <input type="checkbox" value="Thursday" id="thu">
+    <label for="thu">Thursday</label>
+    <input type="checkbox" value="Friday" id="fr">
+    <label for="fr">Friday</label>
+    <input type="checkbox" value="Saturday" id="sat">
+    <label for="sat">Saturday</label></br>
+    <input type="checkbox" value="Sunday" id="sun">
+    <label for="sun">Sunday</label>
+    <label for="">Required Bottle Qty</br>For Order Delivery</label>
+<input type="text" class="delinp" id="quantity" onkeyup="validateQuantity()">
+<span id="cust5"></span>
+
+
+</div>
+
+
+    </form>
+</div>
+<script defer src="validation/customer.js"></script>
+</body>
+</html>

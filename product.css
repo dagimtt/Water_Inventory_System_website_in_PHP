@@ -9,6 +9,7 @@ body{
    
     background-size: cover;
     background-color: rgb(230, 230, 211);
+ 
    
 }
 nav{
@@ -48,22 +49,7 @@ a.activee,a:hover{
     border: 1px solid white;
    
 }
-.newPro{
-    position: relative;
-    padding: 40px;
-    margin-top: 200px;
-    margin-left: 80px;  
-    display: block;
-    height: 450px;
-    background-color: black;
-    opacity: 10px;
-    background: url("image/gold9.jpg") no-repeat;
-    background-size: cover;
-    opacity: 1;
-    border-radius: 20px;
-    
-    
-}
+
 .c1,.c2{
     width: 300px;
     height: 40px;
@@ -148,10 +134,5 @@ a.activee,a:hover{
     color: white;
     
 }
-.input1,.input2,.input3{
-    width: 300px;
-    background-color: white;
-    height: 30px;
-    border: none;
 
-}
+

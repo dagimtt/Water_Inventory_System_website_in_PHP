@@ -1,3 +1,32 @@
+<?php
+include 'connection.php';
+$productname = $_GET['updateid'];
+$sqll = "SELECT * FROM product WHERE productname='$productname'";
+$result = mysqli_query($con,$sqll);
+$row = mysqli_fetch_assoc($result);
+$productname = $row['productname'];
+$price = $row['price'];
+$quantity = $row['quantity'];
+$deprection = $row['deprection'];
+  if(isset($_POST['sub'])){
+   // $productname=$_POST['productname'];
+    $price=$_POST['price'];
+    $deprection=$_POST['deprection'];
+     $quantity=$_POST['quantity'];
+
+   $sql = "UPDATE product SET productname='$productname',price='$price',quantity='$quantity',deprection='$deprection' WHERE productname='$productname'";
+
+    $result = mysqli_query($con,$sql);
+    if($result){
+    //  echo "updated succ";
+     header('location:productTable.php');
+    }
+    else{
+      die(mysquli_error($con));
+    }
+  }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -74,6 +103,7 @@
           border-color: black;
           box-shadow: 0 0 8px 0 dodgerblue;
       }
+    
 
         </style>
 </head>
@@ -99,8 +129,8 @@
                 <i class="fa fa-caret-down"></i>
               </a>
               <div class="dropdown-content">
-                <a href="orderTable.php">order information</a>
-                <a href="customerTable.php">customer list</a>
+                <a href="new_customer.html">customer information</a>
+                <a href="productTable.php">customer list</a>
                 
               </div>
           </li>   
@@ -121,17 +151,17 @@
         </label>
     </nav>
     <div class="newPro" style="width:350px">
-        <label class="leg"> New Product</label><br><br>
-    <form method="post" action="product.php">
-        <input placeholder="Product Name" name="productname" type="text" class="input1"><br><br>
+        <label class="leg"> UPDATE Product</label><br><br>
+    <form method="post" action="">
+        <input placeholder="Product Name" name="productname" type="text" class="input1" value=<?php echo $productname?>><br><br>
         <br>
 
-        <input placeholder="Price" name="price" type="text" class="input2"><br><br>
+        <input placeholder="Price" name="price" type="text" class="input2" value=<?php echo $price?>><br><br>
         <br>
-        <input placeholder="Quantity" name="quantity" type="text" class="input3"><br><br>
-        <input placeholder="Deprection" name="deprection" type="text" class="input4"><br><br>
+        <input placeholder="Quantity" name="quantity" type="text" class="input3" value=<?php echo $quantity?>><br><br>
+        <input placeholder="Deprection" name="deprection" type="text" class="input4" value=<?php echo $deprection?>><br><br>
         <br><br>
-        <input type="submit" name="submit" value="New Product" class="b1">
+        <input type="submit" name="sub" value="Update" class="b1">
 
         <input type="reset" value="Reset" class="b2">
       </form>

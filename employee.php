@@ -12,7 +12,7 @@ include 'connection.php';
    // $salaryto=$_POST['salaryto'];
 
     $sql = "INSERT INTO table2 (fname,lname,contact,addresss,account,salary)
-    values('$fname','$lname','$contact','$address','$account',$salary)";
+    values('$fname','$lname','$contact','$address','$account','$salary')";
 
     $result = mysqli_query($con,$sql);
     if($result){

@@ -5,46 +5,53 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/c4254e24a8.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="Css/order.css">
+    <link rel="stylesheet" href="Css/order2.css">
     <title>Order</title>
-    
+    <style>
+        .btn:hover{
+           color: white;
+        }
+    </style>
 </head>
 <body>
     <h1 class="header">ORDER HERE</h1>
     <p class="para">please fill your order in the field below and <br>we deliver it to you</p>
         <div class="order-box">
 
-        <form>
+        <form action="order.php" method="post">
             
-        <select class="size" id="size" onkeyup="validateSize()">
-        <option selected disabled>enter size</option>
-        <option value="l1">l1</option>
-        <option value="l1">l1</option>
-        <option value="l1">l1</option>
+        <select name="size"  class="size" id="size" onkeyup="validateSize()">
+        <option >enter size</option>
+        <option value="1l">1l</option>
+        <option value="2l">21</option>
+        <option value="5l">5l</option>
+        <option value="1l">10l</option>
+        <option value="2l">151</option>
+        <option value="5l">20l</option>
         </select>
     <span id="order1"></span>
-        <input class="quantity"  type="text" id="quantity" placeholder="Quantity" onkeyup="validateQuantity()"></br>
+        <input name="quantity" class="quantity"  type="text" id="quantity" placeholder="Quantity" onkeyup="validateQuantity()"></br>
         
         <span id="order2"></span>
     
         
-        <input class="email" type="email" id="email" placeholder="email" onkeyup="validateEmail()">
+        <input name="email" class="email" type="email" id="email" placeholder="email" onkeyup="validateEmail()">
         <span id="order3"></span>
     
        
-        <input class="date" type="date" placeholder="mm/dd/yyy"></br>
+        <input name="date" class="date" type="date" placeholder="mm/dd/yyy"></br>
     
         
-        <input class="phone" type="text" id="phone" placeholder="phone number"onkeyup=" validatePhone()"></br>
+        <input name="phone" class="phone" type="text" id="phone" placeholder="phone number"onkeyup=" validatePhone()"></br>
     <span id="order4"></span>
         
-        <input class="place" type="text" id="place" placeholder="place delivery" onkeyup="validatePlace()"></br>
+        <input name="place" class="place" type="text" id="place" placeholder="place delivery" onkeyup="validatePlace()"></br>
   <span id="order5"></span>
         
-        <textarea class="textearea" name="" id="remark" onkeyup="validateRemark()" >Remarks</textarea></br>
+        <textarea name="textearea" class="textearea" name="" id="remark" onkeyup="validateRemark()" >Remarks</textarea></br>
     <span id="order6"></span>
         
-        <input class="btn" type="submit" value="Order" id="submit" onclick="return validateForm()">
+        <input name="submit" class="btn" type="submit" value="Order" id="submit" onclick="return validateForm()">
     <span id="order7"></span>
 
         </form>

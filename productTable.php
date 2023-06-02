@@ -10,21 +10,24 @@ include 'connection.php';?>
     <title>Document</title>
     <link rel="stylesheet" href="employeeTable.css">
     <style>
-
-        table{
+          body{
+      
+      }
+          table{
     width: 60%;
     border-collapse: collapse;
     margin-top: 50px;
     margin-left: 200px;
     border:3px solid black;
     color:white;
+    background-color: white;
 
 }
 td,th{
       padding: 4px 14px;
       border: 2px solid black;
       text-align: center;
-     
+      
 }
 td{
     color:black;
@@ -84,7 +87,7 @@ button.delete {
   text-decoration: none; 
   display: inline-block; 
   font-size: 14px; 
-  margin: 2px 1px; 
+
   cursor: pointer; 
 }
 
@@ -98,53 +101,41 @@ button.delete a {
     <br>
     <br>
     <br>
- 
+   
     <table class="table">
         <tr bgcolor="gray">
-            <th>id</th>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Contact</th>
-            <th>Address</th>
-          
-            <th>acount stutes</th>
-            <th>salary</th>
             
+            <th>Product Name</th>
+            <th>Product Price</th>
+            <th>Quantity</th>
+            <th>Deprectiom</th>
             <th>operation</th>
         </tr>
      <?php
-        $sql = "SELECT * FROM table2";
+        $sql = "SELECT * FROM product";
         $result = mysqli_query($con,$sql);
         if($result){
 
             while( $row = mysqli_fetch_assoc($result)){
-                $id = $row['id'];
-                $fname = $row['fname'];
-                $lname = $row['lname'];
-                $contact = $row['contact'];
-               // $dates = $row['dates'];
-                $addresss = $row['addresss'];
-                $account = $row['account'];
-                $salary = $row['salary'];
-               // $salaryto = $row['salaryto'];
+                $productname=$row['productname'];
+                 $price=$row['price'];
+                 $quantity=$row['quantity'];
+                  $deprection=$row['deprection'];
+
+                
 
                 echo '<tr>
-                <td>'.$id.'</td>
-                <td>'.$fname.'</td>
-                <td>'.$lname.'</td>
-                <td>'.$contact.'</td>
-                
-                <td>'.$addresss.'</td>
-                <td>'.$account.'</td>
-                <td>'.$salary.'</td>
-          
+                <td>'.$productname.'</td>
+                <td>'.$price.'</td>
+                <td>'.$quantity.'</td>
+                <td>'.$deprection.'</td>
                 <td>
                 
-                <button class="delete"><a href="deleteEmployee.php?
-                deleteid='.$id.'">delete</a></button>
+                <button class="delete"><a href="deleteProduct.php?
+                deleteid='.$productname.'">delete</a></button>
                 
-                <button class="update"><a href="updeteEmployee.php?
-                updateid='.$id.'">update</a></button>
+                <button class="update"><a href="updateProduct.php?
+                updateid='.$productname.'">update</a></button>
                 </td>
             </tr>';
    
@@ -153,6 +144,6 @@ button.delete a {
      
      ?>
     </table>
-    <a class="add" href="newEmployee.html">Add employee</a>
+    <a class="add" href="product.html">Add Product</a>
 </body>
 </html>

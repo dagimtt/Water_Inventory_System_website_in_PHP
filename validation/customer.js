@@ -1,6 +1,6 @@
 
 const custNameError=document.getElementById('cust');
-const contactError=document.getElementById('cust2');
+const priceError=document.getElementById('cust2');
 const addressError=document.getElementById('cust3');
 const amountError=document.getElementById('cust4');
 const quantityError=document.getElementById('cust5');
@@ -43,6 +43,70 @@ return false;
            contactError.style.color='green';
             return true;
         }
+
+        function validateContact(){
+            var contact=document.getElementById('contact').value;
+            if(contact.length==0){
+                contactError.innerHTML='con req';
+                contactError.focus();
+                return false;
+            }
+            if(!contact.match(/^[0-9]{10}$/)){
+                contactError.innerHTML='only digit';
+                contactError.style.color='red';
+        return false;
+            }
+            if(contact.length!==10){
+                contactError.innerHTML='digit should be 10';
+                contactError.style.color='red';
+                return false;
+                    }
+                 
+             contactError.innerHTML='valid';
+                   contactError.style.color='green';
+                    return true;
+                }
+        
+                function validateAddress(){
+                    var address=document.getElementById('address').value;
+                    var regu = /^[a-zA-Z]+$/;
+                    if(address.length==0){
+                        addressError.innerHTML='address is required';
+                        addressError.style.color='red';
+                        return false;
+                    }
+                    if(!address.match(regu)){
+                        addressError.innerHTML='only letter'; 
+                        addressError.style.color='red';  
+                        return false;
+                    }
+                    addressError.innerHTML='valid';
+                    addressError.style.color='green';
+                    return true;
+                }
+                function price(){
+                    var price=document.getElementById('price').value;
+                    var regular=/^[0-9]+$/;
+                    if(price.length==0){
+                        priceError.innerHTML='price required';
+                        priceError.style.color='red';
+                        return false;
+                    }
+                    if(price.length>12){
+                        priceError.innerHTML='price should be less ten(10)';
+                        priceError.style.color='red';
+                        return false;
+                    }
+                    if(!price.match(regular)){
+                        priceError.innerHTML='only digit possible';
+                        priceError.style.color='red';
+                        return false;
+                    }
+                    priceError.innerHTML='valid';
+                    priceError.style.color='green';
+                    return true;
+                }
+
 
         function validateAddress(){
             var address=document.getElementById('address').value;

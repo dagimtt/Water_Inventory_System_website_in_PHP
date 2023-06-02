@@ -5,11 +5,16 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://kit.fontawesome.com/c4254e24a8.js" crossorigin="anonymous"></script>
 	<link rel="stylesheet" type="text/css" href="Css/style2.css">
+	<style>
+		.group #span4{
+			color: red;
+		}
+	</style>
 </head>
 <body>
 	<div class="login-box">
 		<h1>Login</h1>
-		<form>
+		<form action="login.php" method="post">
 			<div class="group">
 			<label for="username">Email:</label>
 			<input type="email" id="email" name="email" onkeyup="validEmail()">
@@ -21,8 +26,9 @@
             <span id="spann2"></span>
 		</div>
 			<div class="group">
-			<input type="submit" value="Login"  onclick="return validateForm()" >
+			<input type="submit" name="submit"  value="Login"  onclick="return validateForm()" >
             <span id="spann3"></span>
+		
 		</div>
 		</form>
 	</div>

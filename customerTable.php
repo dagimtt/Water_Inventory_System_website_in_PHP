@@ -10,21 +10,24 @@ include 'connection.php';?>
     <title>Document</title>
     <link rel="stylesheet" href="employeeTable.css">
     <style>
-
-        table{
+          body{
+      
+      }
+          table{
     width: 60%;
     border-collapse: collapse;
     margin-top: 50px;
     margin-left: 200px;
     border:3px solid black;
     color:white;
+    background-color: white;
 
 }
 td,th{
       padding: 4px 14px;
       border: 2px solid black;
       text-align: center;
-     
+      
 }
 td{
     color:black;
@@ -84,7 +87,7 @@ button.delete {
   text-decoration: none; 
   display: inline-block; 
   font-size: 14px; 
-  margin: 2px 1px; 
+
   cursor: pointer; 
 }
 
@@ -98,53 +101,42 @@ button.delete a {
     <br>
     <br>
     <br>
- 
+   
     <table class="table">
         <tr bgcolor="gray">
-            <th>id</th>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Contact</th>
-            <th>Address</th>
-          
-            <th>acount stutes</th>
-            <th>salary</th>
             
+            <th>Firest Name</th>
+            <th>Last Name</th>
+            <th>email</th>
+            <th>address</th>
+            <th>Gender</th>
             <th>operation</th>
+           
         </tr>
      <?php
-        $sql = "SELECT * FROM table2";
+        $sql = "SELECT * FROM customer WHERE email !='dagimtekuash@gmail.com'"  ;
         $result = mysqli_query($con,$sql);
         if($result){
 
             while( $row = mysqli_fetch_assoc($result)){
-                $id = $row['id'];
-                $fname = $row['fname'];
-                $lname = $row['lname'];
-                $contact = $row['contact'];
-               // $dates = $row['dates'];
-                $addresss = $row['addresss'];
-                $account = $row['account'];
-                $salary = $row['salary'];
-               // $salaryto = $row['salaryto'];
+                $fname=$row['fname'];
+                 $lname=$row['lname'];
+                 $email=$row['email'];
+                  $address=$row['address'];
+                  $gender=$row['gender'];
+
+                
 
                 echo '<tr>
-                <td>'.$id.'</td>
                 <td>'.$fname.'</td>
                 <td>'.$lname.'</td>
-                <td>'.$contact.'</td>
-                
-                <td>'.$addresss.'</td>
-                <td>'.$account.'</td>
-                <td>'.$salary.'</td>
-          
+                <td>'.$email.'</td>
+                <td>'.$address.'</td>
+                <td>'.$gender.'</td>
                 <td>
                 
-                <button class="delete"><a href="deleteEmployee.php?
-                deleteid='.$id.'">delete</a></button>
-                
-                <button class="update"><a href="updeteEmployee.php?
-                updateid='.$id.'">update</a></button>
+                <button class="delete"><a href="deleteCustomer.php?
+                deleteid='.$email.'">delete</a></button>
                 </td>
             </tr>';
    
@@ -153,6 +145,5 @@ button.delete a {
      
      ?>
     </table>
-    <a class="add" href="newEmployee.html">Add employee</a>
 </body>
 </html>

@@ -1,6 +1,16 @@
 <?php
 include 'connection.php';
 $id = $_GET['updateid'];
+$sqll = "SELECT * FROM table2 WHERE id=$id";
+$result = mysqli_query($con,$sqll);
+$row = mysqli_fetch_assoc($result);
+$fname = $row['fname'];
+$lname = $row['lname'];
+$contact = $row['contact'];
+$address = $row['addresss'];
+$account = $row['account'];
+$salary = $row['salary'];
+
   if(isset($_POST['subm'])){
     $fname=$_POST['fname'];
     $lname=$_POST['lname'];
@@ -47,15 +57,15 @@ $id = $_GET['updateid'];
                 <fieldset class="dd">
                     <div class="d1">
                     <label class="empLabel"  >Firest Name:</label><br>
-                    <input id="fname" class="empinput" type="text" name="fname" ><br><br>
+                    <input id="fname" class="empinput" type="text" name="fname" value=<?php echo $fname?> ><br><br>
                    </div>
                    <div class="d1">
                     <label class="empLabel">Last Name:</label><br>
-                    <input id="lname" class="empinput" type="text" name="lname"><br><br>
+                    <input id="lname" class="empinput" type="text" name="lname" value=<?php echo $lname?>><br><br>
                 </div>
                 <div class="d1">
                     <label class="empLabel">Contact:</label><br>
-                    <input id="contact" class="empinput" type="text" name="contact"><br><br>
+                    <input id="contact" class="empinput" type="text" name="contact" value=<?php echo $contact?>><br><br>
                 </div>
                   <!--  <label  class="empLabel">Join Date:</label><br>
                     <input id="date" class="empinput" type="text" name="date"><br><br>-->
@@ -63,11 +73,11 @@ $id = $_GET['updateid'];
                 <fieldset class="ddd">
                     <div class="d2">
                     <label class="empLabel2">Address:</label><br>
-                    <input id="address" class="empinput2" type="text" name="address"><br>
+                    <input id="address" class="empinput2" type="text" name="address" value=<?php echo $address?>><br>
                 </div>
                 <div class="d2">
                     <label class="empLabel2">Acount Stutus:</label><br>
-                    <select id="accont" class="desi" name="account">
+                    <select id="accont" class="desi" name="account" value=<?php echo $account?>>
                         <option value="salesman">Activ</option>
                         <option value="salesman">salesman</option>
                         <option value="salesman">salesman</option>
@@ -75,15 +85,9 @@ $id = $_GET['updateid'];
                 </div>
                 <div class="d2">
                     <label class="empLabel2">Salary:</label><br>
-                    <input id="salary" class="empinput2" type="text" name="salary"><br>
+                    <input id="salary" class="empinput2" type="text" name="salary" value=<?php echo $salary?>><br>
                 </div>
-                   <!-- <select id="salaryto" class="desi" name="salaryto">
-                        <option value="salesman">salesman</option>
-                        <option value="salesman">salesman</option>
-                          <label class="empLabel2">Salary Pay To:</label><br>
-                        <option value="salesman">salesman</option>
-                    </select><br>
-                            -->
+                   
                 </fieldset>
                 <input class="b1" type="submit" value="update" name="subm">
                 <input class="b2" type="reset" value="reset">

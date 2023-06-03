@@ -10,26 +10,36 @@ include 'connection.php';?>
     <title>Document</title>
     <link rel="stylesheet" href="employeeTable.css">
     <style>
-
-        table{
-    width: 70%;
-    border-collapse: collapse;
-    margin-top: 50px;
-    margin-left: 200px;
-    border:3px solid black;
-    color:white;
-
-}
-td,th{
-      padding: 4px 14px;
-      border: 2px solid black;
-      text-align: center;
-     
-}
-td{
-    color:black;
-    background-color: #F0D6D1;
-}
+table {
+            font-family: Arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+          }
+          
+          table th,
+          table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+          }
+          
+          table th {
+            background-color: #f2f2f2;
+            color: #333;
+          }
+          
+          table tr:hover {
+            background-color: #e3f2fd;
+          }
+          table tr:visited {
+            background-color: red;
+          }
+          
+          table td {
+            color: #555;
+          }
 .add{
     padding: 12px 16px;
     text-decoration: none;
@@ -59,7 +69,7 @@ td{
     font-weight: 10px;
     height: auto;
 }
-button.update {
+button.update  {
   background-color: #4CAF50; 
   border: none; 
   color: white; 
@@ -74,6 +84,10 @@ button.update {
 
 button.update a {
   color: white; 
+  text-decoration: none; 
+}
+button.update a:visited {
+  color: black; 
   text-decoration: none; 
 }
 button.delete {
@@ -102,53 +116,30 @@ button.delete a {
     <table class="table">
         <tr bgcolor="gray">
             <th>id</th>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Contact</th>
-            <th>Address</th>
-          
-            <th>acount stutes</th>
-            <th>salary</th>
-            <th>Area</th>
-            <th>operation</th>
+            <th>Prodact Name</th>
+            <th>Total Produced</th>
+            <th>Total Sold</th>
+            <th>Total Money</th>
         </tr>
      <?php
-        $sql = "SELECT * FROM table2";
+        $sql = "SELECT * FROM total";
         $result = mysqli_query($con,$sql);
         if($result){
 
             while( $row = mysqli_fetch_assoc($result)){
                 $id = $row['id'];
-                $fname = $row['fname'];
-                $lname = $row['lname'];
-                $contact = $row['contact'];
-               // $dates = $row['dates'];
-                $addresss = $row['addresss'];
-                $account = $row['account'];
-                $salary = $row['salary'];
-                $area = $row['Area'];
-               // $salaryto = $row['salaryto'];
+                $name = $row['productname'];
+                $produced = $row['produced'];
+                $sold = $row['sold'];
+                $money = $row['money'];
+           
 
                 echo '<tr>
                 <td>'.$id.'</td>
-                <td>'.$fname.'</td>
-                <td>'.$lname.'</td>
-                <td>'.$contact.'</td>
-                
-                <td>'.$addresss.'</td>
-                <td>'.$account.'</td>
-                <td>'.$salary.'</td>
-                <td>'.$area.'</td>
-               
-          
-                <td>
-                
-                <button class="delete"><a href="deleteEmployee.php?
-                deleteid='.$id.'">delete</a></button>
-                
-                <button class="update"><a href="updeteEmployee.php?
-                updateid='.$id.'">update</a></button>
-                </td>
+                <td>'.$name.'</td>
+                <td>'.$produced.'</td>
+                <td>'.$sold.'</td>
+                <td>'.$money.'</td>
             </tr>';
    
             }
@@ -156,6 +147,5 @@ button.delete a {
      
      ?>
     </table>
-    <a class="add" href="newEmployee.html">Add employee</a>
 </body>
 </html>

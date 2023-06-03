@@ -26,6 +26,21 @@ $currentQuant = $privQuant-$quantity1;
      $price=$_POST['price'];
      $date=$_POST['date'];
 
+
+//total
+$select3 = "SELECT * FROM total WHERE productname = '$size'";
+    
+$result3 = mysqli_query($con,$select3);
+ $row3 = mysqli_fetch_array($result3);
+ $sold= $row3['sold'];
+ $money= $row3['money'];
+ $sold3 = $sold + $quantity;
+ $price3=$price+$money;
+
+ $s = "UPDATE total SET sold='$sold3',money='$price3' WHERE productname='$size'";
+ $result = mysqli_query($con,$s);    
+
+
    $sql2 = "UPDATE product SET quantity='$currentQuant' WHERE productname='$size'";
 
     $result = mysqli_query($con,$sql2);

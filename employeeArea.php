@@ -1,6 +1,22 @@
+<?php
+  include 'connection.php';
+$fname="";
+$lname="";
 
-
-
+if(isset($_POST['submit'])){
+    $name=$_POST['cb1'];
+    $area=$_POST['cb2'];
+    $sql = "UPDATE table2 SET Area='$area' WHERE fname = '$name'";
+    $result = mysqli_query($con,$sql);
+    if($result){
+      //echo "inserted succ";
+     header('location:employeTable.php');
+    }
+    else{
+      die(mysquli_error($con));
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -34,11 +50,11 @@
         <fieldset class="fild" ><legend>Assign Area</legend>
             
            <br> <br>
-           
-                <label class="empLabel2">Select Employee:</label>
-                <select class="desi">
+           <form method="post" action="">
+                <label class="empLabel2">Select Employee:</label><br>
+                <select name="cb1" class="desi">
                     <?php
-                   include 'connection.php';
+                 
                 $sql = "SELECT fname,lname FROM table2";
 
 
@@ -47,7 +63,7 @@ $result = mysqli_query($con, $sql);
 if (mysqli_num_rows($result) > 0) {
     // Output data of each row as an option in the dropdown list
     while($row = mysqli_fetch_assoc($result)) {
-        echo "<option value='" . $row["fname"] . "'>" . $row["fname"] . " " . $row["lname"] . "</option>";
+        echo "<option value='" . $row["fname"] . "'>" . $row["fname"] . "</option>";
     }
 } else {
     echo "<option value=''>No names found</option>";
@@ -55,18 +71,19 @@ if (mysqli_num_rows($result) > 0) {
 
 ?>
                 </select><br>
-                <label class="empLabel2">Select Area:</label>
-                <select class="desi">
-                    <option vlaue="salesman">Mechanics</option>
-                    <option vlaue="salesman">Operator</option>
-                    <option vlaue="salesman">Manager</option>
-                    <option vlaue="salesman">Shift Leader</option>
-                    <option vlaue="salesman">Compressor</option>
+                <label class="empLabel2">Select Area:</label><br>
+                <select name="cb2" class="desi">
+                    <option vlaue="Mechanics">Mechanics</option>
+                    <option vlaue="Operator">Operator</option>
+                    <option vlaue="Manager">Manager</option>
+                    <option vlaue="Shift Leader">Shift Leader</option>
+                    <option vlaue="Compressor">Compressor</option>
                 </select><br>
-            <input class="b1" type="button" value="Add Employee">
+            <input name="submit" class="b1" type="submit" value="assign Area">
             <br>
             <br>
-            <input class="b2" type="button" value="Update">
+            <input name="reset" class="b2" type="reset" value="clear">
+</form>
         </fieldset>
     </div>
     <script type="text/javascript">

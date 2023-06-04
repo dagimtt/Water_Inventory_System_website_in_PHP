@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Product</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
     <link rel="stylesheet" href="product.css">
     <style>
         .dropdown-content {
@@ -43,7 +44,7 @@
             position: relative;
             padding: 40px;
             margin-top: 150px;
-            margin-left: 280px;  
+            margin-left: 450px;  
             display: block;
             height: 350px;
             width: auto;
@@ -74,6 +75,17 @@
           border-color: black;
           box-shadow: 0 0 8px 0 dodgerblue;
       }
+      #error1,
+      #error2,
+      #error3,
+      #error4,
+      #error5{
+        color: red;
+      }
+      .newPro i{
+        color: black;
+        size: 30px;
+      }
 
         </style>
 </head>
@@ -83,58 +95,57 @@
 
         <img class="logo" src="image/logo.png">
         <ul class="nav-area">
-            <li><a class="active" href="inde1.html">Home</a></li>
+            <li><a class="active" href="inde1.html"><i class="fa-solid fa-house"></i>    Home</a></li>
             <li>   <div class="dropdown">
                 <a class="dropbtn">product 
                   <i class="fa fa-caret-down"></i>
                 </a>
                 <div class="dropdown-content">
-                  <a href="product.html">new product</a>
-                  <a href="productTable.php">product list</a>
-                  <a href="totalTable.php">Total</a>
+                  <a href="product.html"><i class="fa-sharp fa-solid fa-plus"></i>   new product</a>
+                  <a href="productTable.php"> <i class="fa-brands fa-product-hunt"></i>  product list</a>
+                  <a href="totalTable.php"><i class="fa-solid fa-store"></i> Total</a>
                   
                 </div>
             </li>
             <li>   <div class="dropdown">
-              <a class="dropbtn">customer
+              <a class="dropbtn"><i class="fa-solid fa-person-military-pointing"></i>  customer
                 <i class="fa fa-caret-down"></i>
               </a>
               <div class="dropdown-content">
-                <a href="orderTable.php">order information</a>
-                <a href="customerTable.php">customer list</a>
+                <a href="orderTable.php"> <i class="fa-solid fa-arrow-down-short-wide"></i> order information</a>
+                <a href="customerTable.php"> <i class="fa-duotone fa-list"></i>  customer list</a>
                 
               </div>
           </li>   
             <li><div class="dropdown">
-                <a class="dropbtn">emplotee 
-                  <i class="fa fa-caret-down"></i>
+                <a class="dropbtn"> <i class="fa-light fa-person-dress"></i> employee 
                 </a>
                 <div class="dropdown-content">
-                  <a href="newEmployee.html">new employee</a>
-                  <a href="employeTable.php">employee list</a>
+                  <a href="newEmployee.html"><i class="fa-sharp fa-solid fa-plus"></i> new employee</a>
+                  <a href="employeTable.php"> <i class="fa-light fa-person-dress"></i>  employee list</a>
                   
                 </div></li>
             <li><a class="activeeeee" href="#">About</a></li>
         </ul>
-
-        <label id="icon">
-            <i class="fas fa-bars"></i>
-        </label>
     </nav>
     <div class="newPro" style="width:350px">
         <label class="leg"> New Product</label><br><br>
     <form method="post" action="product.php">
-        <input placeholder="Product Name" name="productname" type="text" class="input1"><br><br>
-        <br>
+        <input placeholder="Product Name" id="productname" name="productname" type="text" onkeyup="validateFirstName()"  class="input1"><br><br>
+        <span id="error1"></span> <br>
 
-        <input placeholder="Price" name="price" type="text" class="input2"><br><br>
-        <br>
-        <input placeholder="Quantity" name="quantity" type="text" class="input3"><br><br>
-        <input placeholder="Deprection" name="deprection" type="text" class="input4"><br><br>
-        <br><br>
-        <input type="submit" name="submit" value="New Product" class="b1">
+        <input placeholder="Price" name="price" id="price" type="text" class="input2" onkeyup="price()"><br><br>
+        <span id="error2"></span> <br>
+  
+        <input placeholder="Quantity" name="quantity" id="quantity"  type="text" class="input3" onkeyup="validateQuantity()"><br><br>
+        <span id="error3"></span> <br>
+        <input placeholder="Deprection" name="deprection" id="deprection" type="text" class="input4" onkeyup="validateDepraction()"><br><br>
+        <span id="error4"></span> <br>
 
-        <input type="reset" value="Reset" class="b2">
+        <input type="submit" name="submit" value="New Product" onclick="return validateForm()" class="b1">
+
+        <input type="reset" value="Reset" class="b2"><br>
+        <span id="error5"></span> 
       </form>
     </div>
 
@@ -151,6 +162,7 @@
             lastScrollTop = scrollTop;
         })
     </script>
+    <script type="text/javascript" src="productValidation.js"></script>
 </body>
 
 </html>

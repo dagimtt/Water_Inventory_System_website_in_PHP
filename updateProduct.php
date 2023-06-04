@@ -35,6 +35,7 @@ $deprection = $row['deprection'];
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
     <link rel="stylesheet" href="product.css">
     <style>
         .dropdown-content {
@@ -109,47 +110,43 @@ $deprection = $row['deprection'];
 </head>
 
 <body>
-    <nav id="navbar">
+<nav id="navbar">
 
-        <img class="logo" src="image/logo.png">
-        <ul class="nav-area">
-            <li><a class="active" href="inde1.html">Home</a></li>
-            <li>   <div class="dropdown">
-                <a class="dropbtn">product 
-                  <i class="fa fa-caret-down"></i>
-                </a>
-                <div class="dropdown-content">
-                  <a href="product.html">new product</a>
-                  <a href="productTable.php">product list</a>
-                  
-                </div>
-            </li>
-            <li>   <div class="dropdown">
-              <a class="dropbtn">customer
-                <i class="fa fa-caret-down"></i>
-              </a>
-              <div class="dropdown-content">
-                <a href="new_customer.html">customer information</a>
-                <a href="productTable.php">customer list</a>
-                
-              </div>
-          </li>   
-            <li><div class="dropdown">
-                <a class="dropbtn">emplotee 
-                  <i class="fa fa-caret-down"></i>
-                </a>
-                <div class="dropdown-content">
-                  <a href="newEmployee.html">new employee</a>
-                  <a href="employeTable.php">employee list</a>
-                  
-                </div></li>
-            <li><a class="activeeeee" href="#">About</a></li>
-        </ul>
-
-        <label id="icon">
-            <i class="fas fa-bars"></i>
-        </label>
-    </nav>
+<img class="logo" src="image/logo.png">
+<ul class="nav-area">
+    <li><a class="active" href="inde1.html"><i class="fa-solid fa-house"></i>    Home</a></li>
+    <li>   <div class="dropdown">
+        <a class="dropbtn">product 
+          <i class="fa fa-caret-down"></i>
+        </a>
+        <div class="dropdown-content">
+          <a href="product.html"><i class="fa-sharp fa-solid fa-plus"></i>   new product</a>
+          <a href="productTable.php"> <i class="fa-brands fa-product-hunt"></i>  product list</a>
+          <a href="totalTable.php"><i class="fa-solid fa-store"></i> Total</a>
+          
+        </div>
+    </li>
+    <li>   <div class="dropdown">
+      <a class="dropbtn"><i class="fa-solid fa-person-military-pointing"></i>  customer
+        <i class="fa fa-caret-down"></i>
+      </a>
+      <div class="dropdown-content">
+        <a href="orderTable.php"> <i class="fa-solid fa-arrow-down-short-wide"></i> order information</a>
+        <a href="customerTable.php"> <i class="fa-duotone fa-list"></i>  customer list</a>
+        
+      </div>
+  </li>   
+    <li><div class="dropdown">
+        <a class="dropbtn"> <i class="fa-light fa-person-dress"></i> employee 
+        </a>
+        <div class="dropdown-content">
+          <a href="newEmployee.html"><i class="fa-sharp fa-solid fa-plus"></i> new employee</a>
+          <a href="employeTable.php"> <i class="fa-light fa-person-dress"></i>  employee list</a>
+          
+        </div></li>
+    <li><a class="activeeeee" href="#">About</a></li>
+</ul>
+</nav>
     <div class="newPro" style="width:350px">
         <label class="leg"> UPDATE Product</label><br><br>
     <form method="post" action="">

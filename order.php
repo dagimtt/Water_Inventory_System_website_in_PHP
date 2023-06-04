@@ -10,6 +10,26 @@ include 'connection.php';
      $place=$_POST['place'];
      $textearea=$_POST['textearea'];
      
+     //
+     $select = "SELECT * FROM order_table WHERE email = '$email'";
+     $result = mysqli_query($con,$select);
+    if(mysqli_num_rows($result)>0){
+     $row = mysqli_fetch_array($result);
+ 
+
+     $sql = "UPDATE order_table SET size='$size', quantity='$quantity',phone='$phone',place='$place', date='$date',message='$textearea' WHERE email='$email'";
+
+     $result = mysqli_query($con,$sql);
+     if($result){
+      echo "updated succ";
+      // header('location:productTable.php');
+     }
+     else{
+       die(mysquli_error($con));
+     }
+    }
+    else{
+     //
      $sql = "INSERT INTO order_table (email,quantity,size,phone,place,date,message)
     values('$email','$quantity','$size','$phone','$place','$date','$textearea')";
 
@@ -21,6 +41,9 @@ include 'connection.php';
     else{
       die(mysquli_error($con));
     }
+    }
+
+   
     
   }
 ?>

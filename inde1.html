@@ -8,6 +8,7 @@
     <script src="loder.js" defer></script>
     <link rel="stylesheet" href="style1.css">
     <link rel="stylesheet" href="loder.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
     <style>
         .dropdown-content {
             display: none;
@@ -46,48 +47,43 @@
 <body>
 
    
-    <nav>
-     
-        <img class="logo" src="image/logo.png" >
-        <ul class="nav-area">
-            <li><a class="active" href="#">Home</a></li>
-            <li>   <div class="dropdown">
-                <a class="dropbtn">product 
-                  <i class="fa fa-caret-down"></i>
-                </a>
-                <div class="dropdown-content">
-                  <a href="product.html">new product</a>
-                  <a href="productTable.php">product list</a>
-                  <a href="totalTable.php">Total</a>
-                  
-                </div>
-            </li>
-            <li>   <div class="dropdown">
-              <a class="dropbtn">customer
-                <i class="fa fa-caret-down"></i>
-              </a>
-              <div class="dropdown-content">
-                <a href="orderTable.php">order information</a>
-                <a href="customerTable.php">customer list</a>
-                
-              </div>
-          </li>   
-            <li><div class="dropdown">
-                <a class="dropbtn">employee 
-                  <i class="fa fa-caret-down"></i>
-                </a>
-                <div class="dropdown-content">
-                  <a href="newEmployee.html">new employee</a>
-                  <a href="employeTable.php">employee list</a>
-                  
-                </div></li>
-            <li ><a class="activeeeee" href="#">About</a></li>
-        </ul>
-          
-        <label id="icon">
-            <i class="fas fa-bars"></i>
-        </label>
-    </nav>
+  <nav id="navbar">
+
+    <img class="logo" src="image/logo.png">
+    <ul class="nav-area">
+        <li><a class="active" href="inde1.html"><i class="fa-solid fa-house"></i>    Home</a></li>
+        <li>   <div class="dropdown">
+            <a class="dropbtn">product 
+              <i class="fa fa-caret-down"></i>
+            </a>
+            <div class="dropdown-content">
+              <a href="product.html"><i class="fa-sharp fa-solid fa-plus"></i>   new product</a>
+              <a href="productTable.php"> <i class="fa-brands fa-product-hunt"></i>  product list</a>
+              <a href="totalTable.php"><i class="fa-solid fa-store"></i> Total</a>
+              
+            </div>
+        </li>
+        <li>   <div class="dropdown">
+          <a class="dropbtn"><i class="fa-solid fa-person-military-pointing"></i>  customer
+            <i class="fa fa-caret-down"></i>
+          </a>
+          <div class="dropdown-content">
+            <a href="orderTable.php"> <i class="fa-solid fa-arrow-down-short-wide"></i> order information</a>
+            <a href="customerTable.php"> <i class="fa-duotone fa-list"></i>  customer list</a>
+            
+          </div>
+      </li>   
+        <li><div class="dropdown">
+            <a class="dropbtn"> <i class="fa-light fa-person-dress"></i> employee 
+            </a>
+            <div class="dropdown-content">
+              <a href="newEmployee.html"><i class="fa-sharp fa-solid fa-plus"></i> new employee</a>
+              <a href="employeTable.php"> <i class="fa-light fa-person-dress"></i>  employee list</a>
+              
+            </div></li>
+        <li><a class="activeeeee" href="#">About</a></li>
+    </ul>
+</nav>
     <div class="images">
         <img src="image/gold3.jpg">
         <img src="image/gold10.webp">

@@ -23,6 +23,7 @@ include 'connection.php';
      if($result){
       echo "updated succ";
       // header('location:productTable.php');
+      header('location:startAdmin.html');
      }
      else{
        die(mysquli_error($con));
@@ -36,7 +37,9 @@ include 'connection.php';
     $result = mysqli_query($con,$sql);
     if($result){
      // echo "inserted succ";
-     header('location:startAdmin.html');
+     echo '<script>alert("Ordered succse!");</script>';
+     echo "<script>(window.location='startAdmin.html')</script>";
+   //  header('location:');
     }
     else{
       die(mysquli_error($con));

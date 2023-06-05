@@ -45,8 +45,9 @@ $result3 = mysqli_query($con,$select3);
 
     $result = mysqli_query($con,$sql2);
     if($result){
-    // echo "updated succ";
-    header('location:productTable.php');
+      echo '<script>alert(" deliver succse!");</script>';
+      echo "<script>(window.location='productTable.php')</script>";
+   // header('location:');
     }
     else{
       die(mysquli_error($con));

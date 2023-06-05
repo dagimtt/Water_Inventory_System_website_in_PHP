@@ -9,7 +9,7 @@ include 'connection.php';
     $confirm=$_POST['confirm'];
     $address=$_POST['address'];
     $gender=$_POST['gender'];
-    $usertype='admin';
+    $usertype='user';
     
     $select = "SELECT * FROM user WHERE email = '$email'";
     $result = mysqli_query($con,$select);
@@ -18,8 +18,10 @@ include 'connection.php';
         values('$email','$fname','$lname','$address','$gender')";
         $result = mysqli_query($con,$sql);
         if($result){
+          echo '<script>alert("Registeration is succsessful!");</script>';
+          echo "<script>(window.location='login.html')</script>";
          // echo "customer inserted succ";
-         header('location:login.html');
+        // header('location:');
         }
         
         $sqll = "INSERT INTO user (email,password,user_type)
@@ -34,7 +36,7 @@ include 'connection.php';
         }
     }
       else{
-        echo '<script>alert("This is an alert!");</script>';
+        echo '<script>alert("Warning:already exists!");</script>';
         echo "<script>(window.location='sign _up.html')</script>";
       
           
